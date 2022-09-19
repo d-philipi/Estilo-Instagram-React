@@ -1,14 +1,20 @@
-export default function Usuario() {
+import React from 'react';
+
+
+export default function Usuario(props) {
+  const[imagem,setImagem]= React.useState(props.imagem);
+  const[subtitulo,setSubtitulo]= React.useState(props.subtitulo);
     return (
         <div class="usuario">
-          <img src="img/catanacomics.svg" />
+          <img onClick={() => setImagem(prompt("Deixe a Url da imagem que você quer colocar:"))} src={imagem} />
           <div class="texto">
-            <strong>catanacomics</strong>
+            <strong>{props.nome}</strong>
             <span>
-              Catana
-              <ion-icon name="pencil"></ion-icon>
+              {subtitulo}
+              <ion-icon onClick={() => setSubtitulo(prompt("Digite seu novo nome:"))} name="pencil"></ion-icon>
             </span>
           </div>
         </div>
     );
 }
+

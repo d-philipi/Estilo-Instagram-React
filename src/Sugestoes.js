@@ -1,3 +1,27 @@
+const sugestoes = [
+  {usuario:"bad.vibes.memes",imagem:"img/bad.vibes.memes.svg",razao:"Segue você"},
+  {usuario:"chibirdart",imagem:"img/chibirdart.svg",razao:"Segue você"},
+  {usuario:"razoesparaacreditar",imagem:"img/razoesparaacreditar.svg",razao:"Novo no Instagram"},
+  {usuario:"adorable_animals",imagem:"img/adorable_animals.svg",razao:"Segue você"},
+  {usuario:"smallcutecats",imagem:"img/smallcutecats.svg",razao:"Segue você"}
+]
+
+function sugestao (item){
+  return(
+    <div class="sugestao">
+      <div class="usuario">
+        <img src={item.imagem} />
+        <div class="texto">
+          <div class="nome">{item.usuario}</div>
+          <div class="razao">{item.razao}</div>
+        </div>
+      </div>
+
+      <div class="seguir">Seguir</div>
+    </div>
+  )
+}
+
 export default function Sugestoes() {
     return (
         <div class="sugestoes">
@@ -6,65 +30,7 @@ export default function Sugestoes() {
             <div>Ver tudo</div>
           </div>
 
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="img/bad.vibes.memes.svg" />
-              <div class="texto">
-                <div class="nome">bad.vibes.memes</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="img/chibirdart.svg" />
-              <div class="texto">
-                <div class="nome">chibirdart</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="img/razoesparaacreditar.svg" />
-              <div class="texto">
-                <div class="nome">razoesparaacreditar</div>
-                <div class="razao">Novo no Instagram</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="img/adorable_animals.svg" />
-              <div class="texto">
-                <div class="nome">adorable_animals</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="img/smallcutecats.svg" />
-              <div class="texto">
-                <div class="nome">smallcutecats</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
+          {sugestoes.map(sugestao)}
         </div>
     );
 }
