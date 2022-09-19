@@ -11,6 +11,10 @@ body {
   font-size: 14px;
 }
 
+.vermelho{
+  color: red !important;
+}
+
 .navbar {
   width: 100%;
   display: flex;
